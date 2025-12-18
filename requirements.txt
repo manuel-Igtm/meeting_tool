@@ -1,0 +1,40 @@
+# Django & REST Framework
+Django>=4.2,<5.0
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.3.0
+django-cors-headers>=4.3.0
+django-filter>=23.5
+
+# Database
+psycopg2-binary>=2.9.9
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+python-decouple>=3.8
+
+# Timezone & Date Handling
+pytz>=2024.1
+
+# Email
+django-anymail>=10.2
+
+# Celery for async tasks (notifications, reminders)
+celery>=5.3.0
+redis>=5.0.0
+django-celery-beat>=2.5.0
+
+# API Documentation
+drf-spectacular>=0.27.0
+
+# Testing
+pytest>=7.4.0
+pytest-django>=4.7.0
+factory-boy>=3.3.0
+
+# Code Quality
+black>=24.1.0
+flake8>=7.0.0
+isort>=5.13.0
+
+# Security
+django-ratelimit>=4.1.0
