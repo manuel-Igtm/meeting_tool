@@ -16,7 +16,7 @@ import logging
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 from enum import Enum
 from typing import Optional, Tuple, List, Dict, Any
 from django.conf import settings
@@ -400,7 +400,7 @@ class BusinessHoursChecker:
                 )
             # After weekend hours, go to Monday
             days_until_monday = (7 - weekday) % 7 or 7
-            next_day = kenya_now + timezone.timedelta(days=days_until_monday)
+            next_day = kenya_now + timedelta(days=days_until_monday)
             return next_day.replace(
                 hour=cls.DEFAULT_START.hour,
                 minute=0,
@@ -416,7 +416,7 @@ class BusinessHoursChecker:
                     microsecond=0
                 )
             # After business hours, go to next day
-            next_day = kenya_now + timezone.timedelta(days=1)
+            next_day = kenya_now + timedelta(days=1)
             if next_day.weekday() >= 5:  # Weekend
                 return next_day.replace(
                     hour=cls.WEEKEND_START.hour,
